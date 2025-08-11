@@ -1,3 +1,5 @@
+// TODO : Use mutation observer to respond to changes to the document in real-time
+
 // TODO: Differentiate between image and ai overview header.
 const headerAiOverviewDiv = 
     document.querySelector("div.bzXtMb.M8OgIe.dRpWwb") ? document.getElementById("Odp5De") : null
@@ -11,6 +13,13 @@ removeNodeIfExists(aiModeDiv)
 
 const aiModeButton = document.querySelector("button.plR5qb")
 removeNodeIfExists(aiModeButton)
+
+// TODO: Remove dfs (on click listener) and integrate this solution for removing ai overview from people also ask
+// document.querySelectorAll("div.related-question-pair").forEach((el)=>{
+//     if ((/ai overview/i).test(el.innerHTML)){
+//         el.remove()
+//     }
+// })
 
 const peopleAlsoAskDiv = document.querySelector("div.Wt5Tfe")
 const questionPairDiv = peopleAlsoAskDiv.getElementsByClassName("LQCGqc")[0]
