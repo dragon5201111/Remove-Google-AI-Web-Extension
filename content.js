@@ -1,3 +1,4 @@
+// TODO: Differentiate between image and ai overview header.
 const headerAiOverviewDiv = 
     document.querySelector("div.bzXtMb.M8OgIe.dRpWwb") ? document.getElementById("Odp5De") : null
 removeNodeIfExists(headerAiOverviewDiv)
