@@ -14,7 +14,7 @@ removeNodeIfExists(aiModeDiv)
 const aiModeButton = document.querySelector("button.plR5qb")
 removeNodeIfExists(aiModeButton)
 
-// TODO: Remove dfs (on click listener) and integrate this solution for removing ai overview from people also ask
+// TODO: Remove bfs (on click listener) and integrate this solution for removing ai overview from people also ask
 // document.querySelectorAll("div.related-question-pair").forEach((el)=>{
 //     if ((/ai overview/i).test(el.innerHTML)){
 //         el.remove()
