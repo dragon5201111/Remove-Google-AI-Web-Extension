@@ -2,6 +2,11 @@ const patterns = [
     /ai overview/i
 ]
 
+const aiModeDiv = document.querySelector("div.olrp5b")
+if (aiModeDiv){
+    hideElement(aiModeDiv)
+}
+
 // Header is only loaded on the first search page; don't need to respond to dom changes
 const headerAiOverviewDiv = document.getElementById("Odp5De")
 if (headerAiOverviewDiv){
