@@ -2,19 +2,17 @@ const patterns = [
     /ai overview/i
 ]
 
-const aiModeDiv = document.querySelector("div.olrp5b")
-if (aiModeDiv){
-    hideElement(aiModeDiv)
+const aiMode = document.querySelector("div.olrp5b")
+if (aiMode){
+    hideElement(aiMode)
 }
 
-// Header is only loaded on the first search page; don't need to respond to dom changes
-const headerAiOverviewDiv = document.getElementById("Odp5De")
-if (headerAiOverviewDiv){
-    if (innerHTMLMatchesPattern(headerAiOverviewDiv.innerHTML)){
-        hideElement(headerAiOverviewDiv)
+const aiOverviewHeader = document.getElementById("Odp5De")
+if (aiOverviewHeader){
+    if (innerHTMLMatchesPattern(aiOverviewHeader.innerHTML)){
+        hideElement(aiOverviewHeader)
     }
 }
-
 
 const documentObserver = new MutationObserver(()=>{
     const relatedQuestionPairs = document.querySelectorAll("div.related-question-pair")
