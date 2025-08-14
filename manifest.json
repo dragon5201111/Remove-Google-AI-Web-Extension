@@ -6,9 +6,12 @@
     "permissions" : ["tabs"],
     "content_scripts" : [
         {
-        "js" : ["content.js"],
-        "matches" : ["https://www.google.com/search*", "https://www.google.com/"],
-        "runAt" : "document_end"
+        "js" : [
+            "elementHider.js",
+            "content.js"
+        ],
+        "matches" : ["https://www.google.com/search*"],
+        "run_at" : "document_idle"
         }
     ]
 }
