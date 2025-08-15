@@ -1,5 +1,5 @@
 class ElementHider{
-    static HIDE_ATTRIBUTE = "hidden"
+    static #HIDE_ATTRIBUTE = "hidden"
 
     static hideAll(elements, regexPatterns){
         elements.forEach((element) => {
@@ -23,7 +23,7 @@ class ElementHider{
     }
 
     static #hasBeenHidden(element) {
-        return element.hasAttribute(ElementHider.HIDE_ATTRIBUTE);
+        return element.hasAttribute(ElementHider.#HIDE_ATTRIBUTE);
     }
 
     static #innerHTMLMatchesAPattern(element, regexPatterns) {
@@ -35,6 +35,6 @@ class ElementHider{
     }
 
     static #markElementAsHidden(element) {
-        element.setAttribute(ElementHider.HIDE_ATTRIBUTE, "");
+        element.setAttribute(ElementHider.#HIDE_ATTRIBUTE, "");
     }
 }
