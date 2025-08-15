@@ -10,20 +10,13 @@ ElementHider.hide(aiOverviewHeader, patterns)
 
 const documentObserver = new MutationObserver(()=>{
     const aiOverviewElements = document.querySelectorAll("[data-mcpr]")
-    aiOverviewElements.forEach((element)=>{
-        ElementHider.hide(element, patterns)
-    })
-
     const relatedQuestionPairs = document.querySelectorAll("div.related-question-pair")
-    relatedQuestionPairs.forEach((questionPair)=>{
-        ElementHider.hide(questionPair, patterns)
-    })
+    ElementHider.hideAll([...aiOverviewElements, ...relatedQuestionPairs], patterns)
 })
 
-
-const observerConfig = {
+const documentObserverConfig = {
     childList : true,
     subtree : true
 }
 
-documentObserver.observe(document, observerConfig)
+documentObserver.observe(document, documentObserverConfig)

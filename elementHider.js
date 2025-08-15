@@ -1,6 +1,12 @@
 class ElementHider{
     static HIDE_ATTRIBUTE = "hidden"
 
+    static hideAll(elements, regexPatterns){
+        elements.forEach((element) => {
+            ElementHider.hide(element, regexPatterns)
+        });
+    }
+
     static hide(element, regexPatterns){
         if (!element){
             return
