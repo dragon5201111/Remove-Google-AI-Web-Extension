@@ -12,29 +12,29 @@ class ElementHider{
             return
         }
 
-        if (ElementHider.hasBeenHidden(element)) {
+        if (ElementHider.#hasBeenHidden(element)) {
             return;
         }
 
-        if (ElementHider.innerHTMLMatchesAPattern(element, regexPatterns)) {
-            ElementHider.makeElementInvisible(element);
-            ElementHider.markElementAsHidden(element);
+        if (ElementHider.#innerHTMLMatchesAPattern(element, regexPatterns)) {
+            ElementHider.#makeElementInvisible(element);
+            ElementHider.#markElementAsHidden(element);
         }
     }
 
-    static hasBeenHidden(element) {
+    static #hasBeenHidden(element) {
         return element.hasAttribute(ElementHider.HIDE_ATTRIBUTE);
     }
 
-    static innerHTMLMatchesAPattern(element, regexPatterns) {
+    static #innerHTMLMatchesAPattern(element, regexPatterns) {
         return regexPatterns.some(pattern => pattern.test(element.innerHTML));
     }
 
-    static makeElementInvisible(element) {
+    static #makeElementInvisible(element) {
         element.style.display = "none";
     }
 
-    static markElementAsHidden(element) {
+    static #markElementAsHidden(element) {
         element.setAttribute(ElementHider.HIDE_ATTRIBUTE, "");
     }
 }
